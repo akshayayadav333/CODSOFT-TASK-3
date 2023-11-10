@@ -1,0 +1,46 @@
+import java.util.*;
+
+public class Cash_Dispencery {
+    public static void main(String args[]) {
+        int account_bal = 50000, retrive,put;
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("ATM_Dispencery");
+            System.out.println("1. assess funds");
+            System.out.println("2. put");
+            System.out.println("3. carry out the needed action");
+            System.out.println("4. EXIT");
+            System.out.println("5. execute the neccessary task: ");
+
+            int ch = sc.nextInt();
+            switch (ch) {
+                case 1:
+                    System.out.print("input the amount you  wish to retrive:");
+                    retrive = sc.nextInt();
+                    if (account_bal >= retrive) {
+                        account_bal = account_bal - retrive;
+                        System.out.println(" claim your funds.");
+                    } else {
+                        System.out.println("Unable to retrive insufficient balance.");
+                    }
+                    System.out.println("");
+                    break;
+                case 2:
+                    System.out.println("Enter the desired  value :");
+                    put = sc.nextInt();
+                    account_bal = account_bal + put;
+                    System.out.println("Your cash has been placed.");
+                    System.out.println("");
+                    break;
+                case 3:
+                    System.out.println("Balanceaccount : " + account_bal);
+                    System.out.println("");
+                    break;
+                case 4:
+                    System.out.println("");
+                    System.exit(0);
+            }
+        }
+
+    }
+}
